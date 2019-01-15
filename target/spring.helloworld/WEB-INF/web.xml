@@ -40,4 +40,16 @@
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.map</url-pattern>
+        <url-pattern>*.js</url-pattern>
+        <url-pattern>*.css</url-pattern>
+        <url-pattern>*.html</url-pattern>
+        <url-pattern>*.ico</url-pattern>
+        <url-pattern>*.jpg</url-pattern>
+        <url-pattern>*.woff2</url-pattern>
+        <url-pattern>*.eot</url-pattern>
+    </servlet-mapping>
 </web-app>

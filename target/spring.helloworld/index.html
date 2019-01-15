@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>框架配置</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+</head>
+<!-- Essential javascripts for application to work-->
+<body class="app sidebar-mini rtl">
+<!-- Navbar-->
+<header class="app-header"><a class="app-header__logo" href="index.html">Kyee</a>
+    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+    <!-- Navbar Right Menu-->
+    <ul class="app-nav">
+        <!--Notification Menu-->
+        <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Show notifications"><i class="fa fa-bell-o fa-lg"></i></a>
+            <ul class="app-notification dropdown-menu dropdown-menu-right">
+                <li class="app-notification__title">您有3个新通知</li>
+                <div class="app-notification__content">
+                    <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></span>
+                        <div>
+                            <p class="app-notification__message">系统有3处不符合集团规范</p>
+                            <p class="app-notification__meta">2分钟前</p>
+                        </div></a></li>
+                    <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-danger"></i><i class="fa fa-hdd-o fa-stack-1x fa-inverse"></i></span></span>
+                        <div>
+                            <p class="app-notification__message">系统存在20个慢sql</p>
+                            <p class="app-notification__meta">5分钟前</p>
+                        </div></a></li>
+                    <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-success"></i><i class="fa fa-money fa-stack-1x fa-inverse"></i></span></span>
+                        <div>
+                            <p class="app-notification__message">系统存在20个异常请求</p>
+                            <p class="app-notification__meta">2天前</p>
+                        </div></a></li>
+                </div>
+            </ul>
+        </li>
+    </ul>
+</header>
+<!-- Sidebar menu-->
+<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+<aside class="app-sidebar">
+    <!--<iframe src="menu.html" width="100%" height="100%" MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no  ></iframe>-->
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar"  src="img/default_header.jpg" alt="User Image">
+        <div>
+            <p class="app-sidebar__user-name">架构部</p>
+            <p class="app-sidebar__user-designation">早上好~</p>
+        </div>
+    </div>
+    <ul class="app-menu">
+        <li><a class="app-menu__item" href="index.html"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">系统参数</span><b class="caret"></b></a></li>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">日志清理</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+            <ul class="treeview-menu">
+                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i> 清理配置</a></li>
+                <li><a class="treeview-item" href="#" rel="noopener"><i class="icon fa fa-circle-o"></i> 清理记录</a></li>
+            </ul>
+        </li>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">监控审计</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+            <ul class="treeview-menu">
+                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i> 用户请求</a></li>
+                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i> 慢SQL</a></li>
+            </ul>
+        </li>
+    </ul>
+</aside>
+<main class="app-content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tile">
+                <div class="tile-body">
+                    <form class="form-horizontal">
+                        <div class="form-group row">
+                            <label style="margin-left:6%;font-size: 15px;line-height: 40px;">指定日志路径：</label>
+                            <div class="col-md-4">
+                                <input id="logFilePath" class="form-control" type="text" placeholder="输入日志路径">
+                            </div>
+                            <label style="font-size: 15px;line-height: 40px;margin-left: 40px;">保留时间(天)：</label>
+                            <div class="col-md-4">
+                                <input id="logKeepDays" class="form-control" type="text" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label style="margin-left:4%;font-size: 15px;line-height: 40px;">指定catalina路径：</label>
+                            <div class="col-md-4">
+                                <input id="catalinaPath" class="form-control" type="text" placeholder="输入catalina.out文件路径">
+                            </div>
+                            <label style="font-size: 15px;line-height: 40px;margin-left: 40px;">保留时间(天)：</label>
+                            <div class="col-md-4">
+                                <input id="cataKeepDays" class="form-control" type="text" placeholder="">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="tile-footer">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button id="submitBtn" class="btn btn-primary" type="button" style="margin-left:80%;"><i class="fa fa-fw fa-lg fa-check-circle"></i>提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Essential javascripts for application to work-->
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<!-- The javascript plugin to display page loading on top-->
+<script type="text/javascript">
+    $(function(){
+        var $submitBtn=$("#submitBtn");
+        $submitBtn.on(
+            "click",function(){
+                var $logFilePath = $("#logFilePath")[0].value;
+                var $logKeepDays = $("#logKeepDays")[0].value;
+                var $catalinaPath = $("#catalinaPath")[0].value;;
+                var $cataKeepDays = $("#cataKeepDays")[0].value;;
+                $.ajax({
+                    url:"/clean/logs/saveCleanFilePath/test",
+                    data:{
+                        logFilePath: $logFilePath,
+                        logKeepDays: $logKeepDays,
+                        catalinaPath: $catalinaPath,
+                        cataKeepDays : $cataKeepDays,
+                    },
+                    type:"post",
+                    success:function(data){
+                        alert("保存成功！");
+                    },
+                    error:function() {
+                        alert("保存失败！！");
+                    }
+                })
+            })
+    })
+</script>
+</body>
+</html>
